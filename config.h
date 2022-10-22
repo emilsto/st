@@ -93,51 +93,47 @@ char *termname = "st-256color";
  */
 unsigned int tabspaces = 8;
 
-
-/* bg opacity */
-float alpha = 1.0;
+float alpha = 0.8;
 
 /* Terminal colors (16 first used in escape sequence) */
-/* Colorscheme based on the 'Doom One' theme from Doom Emacs */
 static const char *colorname[] = {
 	/* 8 normal colors */
-	"#1c1f24",
-	"#ff6c6b",
-	"#98be65",
-	"#da8548",
-	"#51afef",
-	"#c678dd",
-	"#5699af",
-	"#202328",
+	[0] = "#123e7c",
+	[1] = "#ff0000",
+	[2] = "#d300c4",
+	[3] = "#f57800",
+	[4] = "#123e7c",
+	[5] = "#711c91",
+	[6] = "#0abdc6",
+	[7] = "#d7d7d5",
 
 	/* 8 bright colors */
-	"#5b6268",
-	"#da8548",
-	"#4db5bd",
-	"#ecbe7b",
-	"#3071db",
-	"#a9a1e1",
-	"#46d9ff",
-	"#dfdfdf",
+	[8] = "#1c61c2",
+	[9] = "#ff0000",
+	[10] = "#d300c4",
+	[11] = "#f57800",
+	[12] = "#00ff00",
+	[13] = "#711c91",
+	[14] = "#0abdc6",
+	[15] = "#d7d7d5",
 
 	[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
-	"#282c34",
-	"#bbc2cf",
-	"#d7d7d7",
+	[256] = "#0abdc6", // foreground
+	[257] = "#000b1e", // background
+	[258] = "#ffffff", // cursor
 };
 
 
 /*
  * Default colors (colorname index)
- * foreground, background, cursor, reverse cursor
+ * foreground, background, cursor
  */
-unsigned int defaultfg = 257;
-unsigned int defaultbg = 256;
-unsigned int defaultcs = 15;
-static unsigned int defaultrcs = 15;
-
+unsigned int defaultfg = 256;
+unsigned int defaultbg = 257;
+unsigned int defaultcs = 258;
+static unsigned int defaultrcs = 258;
 
 /*
  * Default shape of cursor
